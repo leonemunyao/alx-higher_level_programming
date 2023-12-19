@@ -1,16 +1,24 @@
 #!/usr/bin/python3
-""" Module providing a definition of the class Square
+""" Module providing a definition of a class 'Square'
 """
 
 
 class Square():
-    """ Definition of a Square
+    """ Definition of a 'Square'
     """
     def __init__(self, size=0, position=(0, 0)):
-        """ Initialize 'Square'
+        """ Instantiate a 'Square'
         """
-        self.size = size
-        self.position = position
+        self.size, self.position = size, position
+
+    def __str__(self):
+        """ Create a visual representation of a square
+        """
+        if self.size:
+            return '\n' * self.position[1] + '\n'.join(
+                [' ' * self.position[0] + '#' * self.size] * self.size
+            )
+        return str()
 
     @property
     def size(self):
@@ -55,10 +63,4 @@ class Square():
     def my_print(self):
         """ Print a visual representation of a square
         """
-        if self.size:
-            print('\n' * self.position[1], end="")
-            print('\n'.join(
-                [' ' * self.position[0] + '#' * self.size] * self.size
-            ))
-        else:
-            print()
+        print(self)
