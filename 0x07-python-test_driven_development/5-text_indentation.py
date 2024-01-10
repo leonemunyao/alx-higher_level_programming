@@ -7,7 +7,7 @@ def text_indentation(text):
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    
+
     current_line = ""
 
     for char in text:
@@ -15,7 +15,7 @@ def text_indentation(text):
             print(current_line.strip())
             print()
             current_line = ""
-        
+
         else:
             current_line += char
 

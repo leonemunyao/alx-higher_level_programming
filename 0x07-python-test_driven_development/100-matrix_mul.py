@@ -4,22 +4,28 @@
 
 def matrix_mul(m_a, m_b):
     """Multiplies two matrices."""
-    for m in [m_a, m_b]:
-        # Check if m is a list
-        if not isinstance(m, list):
-            raise TypeError("m_a must be a list or m_b must be a list")
 
-        # Check if m is a list of lists
-        if not all(isinstance(row, list) for row in m):
-            raise TypeError("m_a must be a list of lists or m_b must be a list of lists")
+    if m_a == [] or m_a == [[]]:
+        raise ValueError("m_a can't be empty")
+    if m_b == [] or m_b == [[]]:
+        raise ValueError("m_b can't be empty")
 
-        # Check if m is not empty
-        if not m or any(not row for row in m):
-            raise ValueError("m_a can't be empty or m_b can't be empty")
+    if not isinstance(m_a, list):
+        raise TypeError("m_a must be a list")
+    if not isinstance(m_b, list):
+        raise TypeError("m_b must be a list")
 
-        # Check if all elements are integers or floats
-        if any(not isinstance(elem, (int, float)) for row in m for elem in row):
-            raise TypeError("m_a should contain only integers or floats or m_b should contain only integers or floats")
+    if not all(isinstance(row, list) for row in m_a):
+        raise TypeError("m_a must be a list of lists")
+    if not all(isinstance(row, list) for row in m_b):
+        raise TypeError("m_b must be a list of lists")
+
+    if not all((isinstance(ele, int) or isinstance(ele, float))
+               for ele in [num for row in m_a for num in row]):
+        raise TypeError("m_a should contain only integers or floats")
+    if not all((isinstance(ele, int) or isinstance(ele, float))
+               for ele in [num for row in m_b for num in row]):
+        raise TypeError("m_b should contain only integers or floats")
 
     # Check if m_a and m_b are rectangles (all rows of the same size)
     if len(set(len(row) for row in m_a)) != 1:
@@ -33,6 +39,7 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
     # Perform matrix multiplication
-    result = [[sum(a * b for a, b in zip(row_a, col_b)) for col_b in zip(*m_b)] for row_a in m_a]
+    result = [[sum(a * b for a, b in zip(row_a, col_b))
+               for col_b in zip(*m_b)] for row_a in m_a]
 
     return result
