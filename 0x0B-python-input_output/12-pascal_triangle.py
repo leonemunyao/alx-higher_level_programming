@@ -4,12 +4,15 @@
 
 def pascal_triangle(n):
     """Generates the nth row of Pascal's triangle."""
-    if n == 0:
+    if n <= 0:
         return []
-    elif n == 1:
-        return [1]
-    else:
-        last_row = pascal_triangle(n - 1)
-        this_row = [last_row[i] + last_row[i-1
-                                           ] for i in range(len(last_row))]
-        return this_row
+
+    triangles = [[1]]
+    while len(triangles) != n:
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
+    return triangles
