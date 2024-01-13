@@ -1,2 +1,2 @@
-#!/usr/bin/python3
-print('“The Zen of Python”, by TimPeters')
+#!/usr/bin/env python3
+import this
