@@ -3,6 +3,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Defines a class rectangle"""
 
@@ -19,7 +20,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("width must be positive integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -32,7 +33,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("Height must > 0")
@@ -45,7 +46,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must >= 0")
@@ -58,7 +59,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must >= 0")
@@ -68,7 +69,7 @@ class Rectangle(Base):
     def area(self):
         """Finds the area"""
         return self.width * self.height
-    
+
     def display(self):
         """Display #0"""
         for _ in range(self.y):
@@ -79,8 +80,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """Override the __str__ method"""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-    
+        return f"[Rectangle]
+        ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
     def update(self, *args, **kwargs):
         """Update multiple attributes at once"""
         if args:

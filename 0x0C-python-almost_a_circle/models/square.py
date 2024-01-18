@@ -3,6 +3,7 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """A class to represent a square, inheriting from the Rectangle class."""
     def __init__(self, size, x=0, y=0, id=None):
@@ -12,7 +13,7 @@ class Square(Rectangle):
     def size(self):
         """Getter for size"""
         return self.width
-    
+
     @size.setter
     def size(self, value):
         """setter for ize"""
@@ -22,12 +23,12 @@ class Square(Rectangle):
     def __str__(self):
         """Override the str method"""
         return f"[square] ({self.id}) {self.x}/{self.y} - {self.width}"
-    
+
     @property
     def width(self):
         """Getter for width"""
         return super().width
-    
+
     @width.setter
     def width(self, value):
         """Setter for width"""
@@ -38,7 +39,7 @@ class Square(Rectangle):
     def height(self):
         """Getter for width"""
         return super().height
-    
+
     @height.setter
     def height(self, value):
         """Setter for height"""
