@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Defines a rectangle"""
 
 class Base:
     """Creates a class named base"""
