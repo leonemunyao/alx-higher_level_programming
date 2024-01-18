@@ -80,7 +80,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """Override the __str__ method"""
-        return f"[Rectangle]({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """Update multiple attributes at once"""
