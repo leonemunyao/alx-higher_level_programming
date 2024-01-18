@@ -68,3 +68,12 @@ class Square(Rectangle):
             'size': self.size,
             'y': self.y
         }
+
+    def to_csv_row(self):
+        """Returns a CSV row representing the square instance"""
+        return "{},{},{},{},{}".format(self.id, self.width, self.height, self.x, self.y)
+
+    @classmethod
+    def create_from_csv_row(cls, row):
+        """Creates an instance of cls from a given csv row string"""
+        return cls(*map(int, row[1:]))

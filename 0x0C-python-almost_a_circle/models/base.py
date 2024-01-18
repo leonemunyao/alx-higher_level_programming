@@ -2,6 +2,7 @@
 """Defines a rectangle"""
 
 import json
+import csv
 
 
 class Base:
@@ -68,5 +69,27 @@ class Base:
                 dict_list = cls.from_json_string(json_string)
                 return [cls.create(**dictionary) for dictionary in dict_list]
 
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes list_objs to a CSV file"""
+        filename = f"{cls.__name__}.csv"
+
+        with open(filename, 'w', newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                writer.writerow([str(val) for val in vars(obj).values()])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes instances from a CSV file"""
+        filename = f"{cls.__name__}.csv"
+
+        try:
+            with open(filename, 'r', newline='') as file:
+                reader = csv.reader(file)
+                return [cls.create_from_csv_row(row) for row in reader]
         except FileNotFoundError:
             return []
