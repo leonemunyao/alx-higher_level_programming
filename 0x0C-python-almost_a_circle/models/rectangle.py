@@ -8,6 +8,7 @@ class Rectangle(Base):
     """Defines a class rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """First rectangle"""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -16,12 +17,14 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Gets the width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Sets the width if it is positive"""
         if not isinstance(value, int):
-            raise TypeError("width must be positive integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         else:
@@ -29,23 +32,27 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Gets the height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Sets the height if its positive"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("Height must > 0")
+            raise ValueError("height must > 0")
         else:
             self.__height = value
 
     @property
     def x(self):
+        """Gets x"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Sets x and validates it's within range of the window."""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -55,10 +62,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Gets y"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Sets y and validates it's within range of the window."""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
