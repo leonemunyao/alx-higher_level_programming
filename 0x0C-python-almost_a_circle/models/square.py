@@ -7,6 +7,7 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """A class to represent a square, inheriting from the Rectangle class."""
     def __init__(self, size, x=0, y=0, id=None):
+        """Initialize a new instance of the Square class."""
         super().__init__(size, size, x, y, id)
 
     @property
@@ -22,7 +23,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """Override the str method"""
-        return f"[square] ({self.id}) {self.x}/{self.y} - {self.width}"
+        return f"[square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     @property
     def width(self):
