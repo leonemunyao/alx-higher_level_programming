@@ -26,28 +26,6 @@ class Square(Rectangle):
         """Override the str method"""
         return f"[square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
-    @property
-    def width(self):
-        """Getter for width"""
-        return super().width
-
-    @width.setter
-    def width(self, value):
-        """Setter for width"""
-        super(Square, Square).width.fset(self, value)
-        super(Square, Square).height.fset(self, value)
-
-    @property
-    def height(self):
-        """Getter for width"""
-        return super().height
-
-    @height.setter
-    def height(self, value):
-        """Setter for height"""
-        super(Square, Square).width.fset(self, value)
-        super(Square, Square).height.fset(self, value)
-
     def update(self, *args, **kwargs):
         """Assings attribues"""
         if args:
