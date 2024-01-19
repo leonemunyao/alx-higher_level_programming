@@ -25,4 +25,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """Override the str method"""
-        return f"[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.size}"
+        return f"[{self.__class__.__name__}]
+        ({self.id}) {self.x}/{self.y} - {self.size}"
