@@ -121,7 +121,7 @@ class Rectangle(Base):
 
     def to_csv_row(self):
         """Return a CSV row representation of this rectangle."""
-        return "{},{},{},{},{}".format(self.id, self.width, self.height, self.x, self.y)
+        return f"{self.id},{self.width},{self.height},{self.x},{self.y}"
 
     @classmethod
     def create_from_csv_row(cls, row):
