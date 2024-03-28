@@ -18,7 +18,8 @@ Mandatory: 0.0%
 Optional: 0.0%
 Calculation:  0.0% + (0.0% * 0.0%)  == 0.0%
 Before you start…
-Please make sure your MySQL server is in 8.0 -> How to install MySQL 8.0 in Ubuntu 20.04
+
+Please make sure your MySQL server is in 8.0 -> [How to install MySQL 8.0 in Ubuntu 20.04](https://intranet.alxswe.com/rltoken/paGukker_0KoG3D9FqymNQ)
 
 Background Context
 In this project, you will link two amazing worlds: Databases and Python!
@@ -72,7 +73,7 @@ Read or watch:
 [Python Virtual Environments: A primer](https://intranet.alxswe.com/rltoken/OXle6kXpmD88D0WbgbTWqg)
 
 Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+At the end of this project, you are expected to be able to [explain to anyone](https://intranet.alxswe.com/rltoken/vPPdh3HKg3t23YFxUqHpFg), without the help of Google:
 
 General
 Why Python programming is awesome
