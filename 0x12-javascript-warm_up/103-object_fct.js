@@ -3,11 +3,10 @@
 /**
  Update this script by adding a new function incr that increments the integer value
  */
-
-const myObject = {
+ const myObject = {
     type: 'object',
     value: 12,
-    incr: function() {
+    incr: function () {
         this.value++;
     }
 };
@@ -19,7 +18,4 @@ myObject.incr();
 console.log(myObject);
 myObject.incr();
 console.log(myObject);
-  console.log(myObject);
-  myObject.incr();
-  console.log(myObject);
-  
+
