@@ -5,5 +5,4 @@ prototype: function (number, theFunction)
 */
 exports.addMeMaybe = function (number, theFunction) {
   theFunction(number + 1);
-}
-
+};
