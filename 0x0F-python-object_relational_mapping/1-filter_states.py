@@ -20,7 +20,10 @@ if __name__ == "__main__":
 
     """ Execute the query """
     cursor.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%'ORDER BY name DESC")
+        "SELECT * FROM states WHERE name LIKE 'N%'ORDER BY id ASC")
+
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY name DESC")
 
     """ Fetch all the rows """
     rows = cursor.fetchall()
