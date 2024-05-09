@@ -59,8 +59,3 @@ class Rectangle:
                 if i < self.__height - 1:
                     rectangle__str += "\n"
             return rectangle__str
-
-    def __repr__(self):
-        return (f"<{self.__width}-rectangle.Rectangle object "
-                f"at {hex(id(self))}>"
-                )
