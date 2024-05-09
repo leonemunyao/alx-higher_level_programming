@@ -38,7 +38,6 @@ class Rectangle:
         else:
             self.__height = value
 
-    """Private class attribute number of instances. Increment during each new instance instantiation. Delete during each instance deletion."""
     number_of_instances = 0
 
     def area(self):
